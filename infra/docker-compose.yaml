@@ -9,6 +9,8 @@ services:
       POSTGRES_USER: hn
       POSTGRES_PASSWORD: password
       POSTGRES_DB: hn
+      TZ: UTC
+      PGTZ: UTC
 
   pgadmin:
       container_name: pgadmin4_container
@@ -32,6 +34,11 @@ services:
       CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: '1'
       CLICKHOUSE_PASSWORD: password
       CLICKHOUSE_DB: hn
+    volumes:
+      - ./clickhouse:/etc/clickhouse-server/config.d
+
+  clickhouse-jdbc-bridge:
+    image: clickhouse/jdbc-bridge
 
   grafana:
     image: grafana/grafana

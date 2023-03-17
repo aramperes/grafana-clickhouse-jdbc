@@ -1,0 +1,9 @@
+<clickhouse>
+    <listen_host>0.0.0.0</listen_host>
+    <timezone>UTC</timezone>
+
+    <jdbc_bridge>
+        <host>clickhouse-jdbc-bridge</host>
+        <port>9019</port>
+    </jdbc_bridge>
+</clickhouse>

@@ -79,7 +79,7 @@ with db.connect() as conn:
                 id=comment['id'],
                 parent=comment['parent'],
                 text=comment['text'],
-                time=datetime.datetime.fromtimestamp(comment['time']),
+                time=datetime.datetime.utcfromtimestamp(comment['time']),
                 story=comment['story']
             ))
             sess.commit()

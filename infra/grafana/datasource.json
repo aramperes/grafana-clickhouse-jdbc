@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "uid": "Z5k6ywaVz",
+    "orgId": 1,
+    "name": "ClickHouse",
+    "type": "grafana-clickhouse-datasource",
+    "typeName": "ClickHouse",
+    "typeLogoUrl": "public/plugins/grafana-clickhouse-datasource/img/logo.png",
+    "access": "proxy",
+    "url": "",
+    "user": "",
+    "database": "",
+    "basicAuth": false,
+    "isDefault": true,
+    "jsonData": {
+      "defaultDatabase": "hn",
+      "port": 9000,
+      "server": "clickhouse",
+      "username": "hn",
+      "validate": true
+    },
+    "readOnly": false
+  }
+]

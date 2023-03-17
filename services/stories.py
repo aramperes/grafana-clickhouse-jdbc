@@ -57,7 +57,7 @@ with db.connect() as conn:
                 id=story['id'],
                 score=story['score'],
                 title=story['title'],
-                time=datetime.datetime.fromtimestamp(story['time']),
+                time=datetime.datetime.utcfromtimestamp(story['time']),
                 url=story['url']
             ))
             sess.commit()
