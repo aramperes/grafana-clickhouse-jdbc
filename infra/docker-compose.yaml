@@ -9,6 +9,7 @@ services:
       POSTGRES_USER: hn
       POSTGRES_PASSWORD: password
       POSTGRES_DB: hn
+
   pgadmin:
       container_name: pgadmin4_container
       image: dpage/pgadmin4
@@ -17,3 +18,26 @@ services:
         PGADMIN_DEFAULT_PASSWORD: hn
       ports:
         - "5050:80"
+
+  clickhouse:
+    image: clickhouse/clickhouse-server
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    ports:
+      - 8123:8123
+    environment:
+      CLICKHOUSE_USER: hn
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: '1'
+      CLICKHOUSE_PASSWORD: password
+      CLICKHOUSE_DB: hn
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    environment:
+      GF_INSTALL_PLUGINS: grafana-clickhouse-datasource
+      GF_SECURITY_ADMIN_USER: hn
+      GF_SECURITY_ADMIN_PASSWORD: hn
