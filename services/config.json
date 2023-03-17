@@ -1,0 +1,5 @@
+{
+    "db": {
+        "uri": "postgresql://hn:password@localhost:5432/hn"
+    }
+}
